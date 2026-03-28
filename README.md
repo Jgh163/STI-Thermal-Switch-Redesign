@@ -54,7 +54,6 @@ No neutral wire required. The entire 5V logic rail is powered via a capacitive d
 | `*.kicad_pcb` | KiCad PCB layout |
 | `*.kicad_sch` | KiCad schematic |
 | `board.glb` | 3D model (GLTF/GLB) for web viewer |
-| `STI Probe Thermal Switch Redesign.stl` | STL for 3D printing / GitHub viewer |
 | `index.html` | GitHub Pages interactive 3D viewer |
 
 ---
