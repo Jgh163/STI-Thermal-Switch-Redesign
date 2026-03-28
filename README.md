@@ -1,3 +1,65 @@
 # STI-Thermal-Switch-Redesign
-A novel aproach to adjustable temperature sensing for freeze protection with a fail safe electronic switch with no neutral design. 
-<script src="https://embed.github.com/view/3d/Jgh163/STI-Thermal-Switch-Redesign/blob/main/STI%20Probe%20Thermal%20Switch%20Redesign.stl"></script>
+
+A novel approach to adjustable temperature sensing for freeze protection — a fail-safe electronic switch with **no-neutral 2-wire design**.
+
+---
+
+## 🔲 Interactive 3D Model
+
+**[▶ View Interactive 3D PCB Model](https://jgh163.github.io/STI-Thermal-Switch-Redesign/)**
+
+> Drag to rotate · Scroll to zoom · Full color PCB with components
+
+---
+
+## What This Does
+
+A 2-wire device wired in series with a 120VAC relay coil. It monitors temperature and controls whether the relay energizes:
+
+- **Warm** (above setpoint) → TRIAC fires → relay pulls in → heater OFF
+- **Cold** (below setpoint) → TRIAC off → relay drops out → heater ON
+
+No neutral wire required. The entire 5V logic rail is powered via a capacitive dropper (X2-rated, fails open).
+
+---
+
+## Key Specs
+
+| Parameter | Value |
+|---|---|
+| Supply | 120VAC, 2-wire series |
+| Logic Rail | 5.1V DC (capacitive dropper) |
+| Control Device | Z0103MN TRIAC (600V, 1A) |
+| Comparator | TLV3691 (75nA quiescent) |
+| Sensor | NTC Thermistor (10kΩ) |
+| Quiescent Draw | 0.33 mA |
+| Neutral Required | **No** |
+
+---
+
+## Design Highlights
+
+- **No optocoupler** — AC-coupled gate drive via C4/R7, zero power from the 5V rail
+- **Back-to-back BSS131 MOSFETs** (source-to-source) block both AC polarities when off
+- **TRIAC latching delay** (~0.75ms) exploited as a charging window for C3
+- **X2 safety film cap** on mains — fails open by design
+- **Hysteresis** via R6 (75kΩ) prevents chatter at the switching point
+
+---
+
+## Files
+
+| File | Description |
+|---|---|
+| `*.kicad_pcb` | KiCad PCB layout |
+| `*.kicad_sch` | KiCad schematic |
+| `board.glb` | 3D model (GLTF/GLB) for web viewer |
+| `STI Probe Thermal Switch Redesign.stl` | STL for 3D printing / GitHub viewer |
+| `index.html` | GitHub Pages interactive 3D viewer |
+
+---
+
+## Repository
+
+**GitHub:** [Jgh163/STI-Thermal-Switch-Redesign](https://github.com/Jgh163/STI-Thermal-Switch-Redesign)  
+**Live 3D Viewer:** [jgh163.github.io/STI-Thermal-Switch-Redesign](https://jgh163.github.io/STI-Thermal-Switch-Redesign/)
