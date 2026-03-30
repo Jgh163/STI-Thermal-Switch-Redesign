@@ -39,11 +39,8 @@ No neutral wire required. The entire 5V logic rail is powered via a capacitive d
 
 ## Design Highlights
 
-- **No optocoupler** — AC-coupled gate drive via C4/R7, zero power from the 5V rail
-- **Back-to-back BSS131 MOSFETs** (source-to-source) block both AC polarities when off
 - **TRIAC latching delay** (~0.75ms) exploited as a charging window for C3
 - **X2 safety film cap** on mains — fails open by design
-- **Hysteresis** via R6 (75kΩ) prevents chatter at the switching point
 
 ---
 
@@ -51,8 +48,6 @@ No neutral wire required. The entire 5V logic rail is powered via a capacitive d
 
 | File | Description |
 |---|---|
-| `*.kicad_pcb` | KiCad PCB layout |
-| `*.kicad_sch` | KiCad schematic |
 | `board.glb` | 3D model (GLTF/GLB) for web viewer |
 | `index.html` | GitHub Pages interactive 3D viewer |
 
