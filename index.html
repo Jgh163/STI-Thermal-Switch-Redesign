@@ -321,14 +321,11 @@
       The entire electronics rail is powered via a capacitive dropper (C2, X2 rated) —
       no neutral wire needed. The TRIAC's own latching delay window (~0.75ms per half-cycle)
       is used as a deliberate charging window for the storage capacitor C3, keeping the 5V
-      rail alive even when the TRIAC is conducting.
+      rail maintained even when the TRIAC is conducting.
     </p>
     <p>
-      BSS131 MOSFETs (source-to-source, 200V rated) block the AC-coupled
-      gate drive in both polarities when the comparator output is LOW, giving full TRIAC
-      control without an optocoupler.
-    </p>
-  </div>
+      BSS131 MOSFETs block the AC-coupled
+      gate drive in both polarities when the comparator output is high.
 
   <footer>
     <span>Jgh163 · STI-Thermal-Switch-Redesign</span>
